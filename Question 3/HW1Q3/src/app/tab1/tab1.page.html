@@ -1,0 +1,54 @@
+<ion-header id="toolbar">
+  <ion-toolbar >
+    <img src="/assets/q1_p2.png" alt= "arrow" align= "left" id="arrowpic">
+    <img src="/assets/q1_p1.png" alt= "plus" align= "right">
+    <ion-title>
+      Add Homework
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list lines="none">
+        <ion-list>
+            <ion-list-header>Select Class</ion-list-header>
+            <ion-item>
+              
+              <ion-select multiple="false">
+                <ion-select-option value="CSCE 240" selected>240</ion-select-option>
+                <ion-select-option value="CSCE 416">Networks</ion-select-option>
+                <ion-select-option value="CSCE 546" selected>Apps</ion-select-option>
+                
+              </ion-select>
+            </ion-item>
+          </ion-list>
+      <ion-list-header>Homework name</ion-list-header>
+      <ion-list>
+        
+        <!-- Textarea in an item with a placeholder -->
+      <ion-item>
+        <ion-textarea placeholder="Homework name"></ion-textarea>
+      </ion-item>
+      </ion-list>
+   
+    
+          <ion-item>
+            <ion-label>Due Datetime</ion-label>
+            <ion-datetime display-format="MMM DD, YYYY HH:mm"></ion-datetime>
+          </ion-item>
+          <ion-list-header>Set Priority</ion-list-header>
+          <ion-item>
+            
+              <ion-range color="danger" pin="true" id="slider"></ion-range>
+            </ion-item>
+            <p>Pick Color</p>
+            <div class="input-color">
+                <input type="text" value="" />
+                <div class="color-box" style="background-color: #FF850A;"></div>
+                <!-- Replace "#FF850A" to change the color -->
+            </div>
+            <ion-item>
+                <ion-textarea placeholder="Description"></ion-textarea>
+              </ion-item>
+
+ 
