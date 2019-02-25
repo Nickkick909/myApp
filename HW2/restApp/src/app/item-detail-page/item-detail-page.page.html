@@ -1,0 +1,52 @@
+    <ion-header>
+  <ion-toolbar>
+    <ion-title>Item Detail Page</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref=""></ion-back-button>
+      </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="addOrder(edit_item_form.value)">
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+    <ion-img [src]="current_item.img"></ion-img>
+    
+  <form [formGroup]="edit_item_form" (submit)="updateItem(edit_item_form.value)">
+      <ion-item>
+          <ion-label name= quantity>Quantity:</ion-label>
+          <ion-input type="number" formControlName="quantity" required [readonly]=true> 
+            <ion-range min="1" max="15"  pin = true step=1 snaps=true></ion-range>
+  
+          </ion-input>
+        </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Name</ion-label>
+        <ion-input [readonly]="true" type="text" formControlName="name" required></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label color="primary" position="floating">Price</ion-label>
+          <ion-input [readonly]="true" type="number" formControlName="price" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" position="floating">Type</ion-label>
+            <ion-input [readonly]="true" type="text" formControlName="type" required></ion-input>
+          </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Description</ion-label>
+        <ion-input [readonly]="true" type="text" formControlName="description" required></ion-input>
+      </ion-item>
+      
+      
+  
+      
+    </form>
+
+    
+        
+    
+  </ion-content>

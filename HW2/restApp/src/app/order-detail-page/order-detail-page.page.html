@@ -1,0 +1,35 @@
+<ion-header>  
+  <ion-toolbar>
+    <ion-title>Order Detail Page</ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref=""></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="view_order_form" (submit)="viewOrder(view_order_form.value)">
+      <ion-item>
+        <ion-label color="primary" position="floating">Item Name</ion-label>
+        <ion-input [readonly]="true" type="text" formControlName="itemName" required></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label color="primary" position="floating">Total Price</ion-label>
+          <ion-input [readonly]="true" type="number" formControlName="totalPrice" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="primary" position="floating">Number of Items</ion-label>
+            <ion-input [readonly]="true" type="text" formControlName="totalItems" required></ion-input>
+          </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Date</ion-label>
+        <ion-input [readonly]="true" type="text" formControlName="date" required></ion-input>
+      </ion-item>
+
+    </form>
+
+    
+        
+    
+  </ion-content>
