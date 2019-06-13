@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Order Detail Page</ion-title>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="goBack()">
+        Back
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<div *ngIf="current_order">
+  <h3>{{ current_order.item_name }}</h3>
+  <ion-label>
+    <i>Order Date: {{ current_order.date }}</i>
+    <br /> 
+    <b>Quantity:</b> {{current_order.quantity}}
+    <br/>
+    <b>Total price:</b> ${{current_order.total_price}}
+  </ion-label>
+  </div>  
+</ion-content>

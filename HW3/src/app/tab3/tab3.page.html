@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Settings
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="settings_form" (submit)="editSettings(settings_form.value)">
+      <ion-item>
+        <ion-label color="primary" position="floating">Store Name</ion-label>
+        <ion-input type="text" formControlName="storeName" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" position="floating">Store Logo</ion-label>
+        <ion-input type="text" formControlName="logo" required></ion-input>
+      </ion-item>
+  
+  <ion-item>
+      <ion-label color="primary" position="floating">Phone Number</ion-label>
+      <ion-input type="number" formControlName="phone" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label color="primary" position="floating">Address</ion-label>
+        <ion-input type="text" formControlName="address" required></ion-input>
+      </ion-item>
+  
+      <ion-button class="submit-btn" expand="block" type="submit" >Update Settings</ion-button>
+    </form>
+  
+</ion-content>
+

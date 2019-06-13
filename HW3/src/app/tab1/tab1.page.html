@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar> 
+    <ion-title>
+      Nicholas Knight's Restaurant
+    </ion-title>
+    <ion-buttons slot="primary">
+        <ion-button (click)="openNewItemPage()" *ngIf="isowner"><ion-icon slot="icon-only" name="add"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="openCartPage()" *ngIf="!isowner"><ion-icon name="cart"></ion-icon>My Cart</ion-button>
+    </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar class="searchIcon" [(ngModel)]="searchKey" [showCancelButton]=true
+    (ionInput)="search()" (ionClear)= "resetChanges()"></ion-searchbar>
+    <ion-list>
+        <ion-item *ngFor="let item of items" (click)="itemDetailPage(item)">
+            <ion-thumbnail slot="start">
+              <ion-img [src]="item.photoUrl"></ion-img>
+            </ion-thumbnail>
+            <ion-label text-wrap>
+            <div align=LEFT>
+              <h2>{{ item.name }}</h2>
+              <p>{{ item.description }}
+              <br/>
+              ${{item.price}}
+              </p>
+            </div>
+            </ion-label>
+            <ion-button (click)="itemDetailPage(item)" fill="outline" slot="end">Info</ion-button>
+          </ion-item>
+          
+    </ion-list>
+</ion-content>

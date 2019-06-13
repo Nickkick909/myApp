@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detail</ion-title>
+    <ion-button (click)="goBack()">Back</ion-button>
+    <ion-buttons slot="primary">
+      <ion-button class="submit-btn" type="submit" (click)="createOrder()">
+        Place Order
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="current_item">
+  <ion-img [src]="current_item.photoUrl"></ion-img>
+    <h3>{{ current_item.name }}</h3>
+    <div>
+      <ion-label>
+        <i>{{ current_item.description }}</i>
+        <br /> 
+        <b>Unit price:</b> ${{current_item.price}}
+      </ion-label>
+      </div>
+      <div align=CENTER>
+      <ion-label>
+        <br />
+        How many would you like to order?
+      </ion-label>
+      </div>
+      <ion-item>
+        <ion-range min="0" max="10" [(ngModel)]="quantity" pin=true step="1">
+          <ion-label slot="start">0</ion-label>
+          <ion-label slot="end">10</ion-label>
+        </ion-range>
+      </ion-item>
+    <ion-item>
+      <ion-label>Order Date</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" placeholder="{{date}}" [(ngModel)]="date"></ion-datetime>
+    </ion-item>
+  </div>  
+</ion-content>

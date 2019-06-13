@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      My Cart
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let order of orders" (click)="orderDetailPage(order)">
+            <ion-label text-wrap>
+            <div align=LEFT>
+              <h2>{{ order.item_name }}</h2>
+              <p>Quantity: {{ order.quantity }}
+              <br/>
+              ${{order.total_price}}
+              </p>
+            </div>
+            </ion-label>
+            <ion-button (click)="orderDetailPage(order)" fill="outline" slot="end">Info</ion-button>
+          </ion-item>
+          
+    </ion-list>
+</ion-content>
